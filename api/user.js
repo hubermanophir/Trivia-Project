@@ -23,6 +23,7 @@ const createRefreshToken = (user) => {
   return jwt.sign({ user }, process.env.REFRESH_TOKEN_SECRET);
 };
 
+//Registers a new user
 router.post("/register", async (req, res) => {
   const { name, password } = req.body;
   const doesExist = await checkUserExist(req.body);
@@ -42,6 +43,7 @@ router.post("/register", async (req, res) => {
   return res.status(200).json({ message: "User created successfully" });
 });
 
+//User login
 router.post("/login", async (req, res) => {
   const { name, password } = req.body;
   const doesExist = await checkUserExist(req.body);
@@ -61,12 +63,14 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//User logout
 router.post("/logout", async (req, res) => {
   res.clearCookie("Access-Token");
   res.clearCookie("Refresh-Token");
   return res.status(200).json({ message: "success" });
 });
 
+//Adds user with score to scoreboard
 router.post("/score", async (req, res) => {
   const { name, id, score } = req.body;
   try {
@@ -77,6 +81,7 @@ router.post("/score", async (req, res) => {
   }
 });
 
+//Gets a single user
 router.post("/getuser", async (req, res) => {
   const { body } = req;
   try {

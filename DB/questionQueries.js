@@ -290,7 +290,7 @@ const updateSavedQuestion = async (obj) => {
   );
 };
 
-//Creates a user with a user name and a score
+//Creates a user
 const createUser = async (obj) => {
   await User.create({
     name: obj.name,
@@ -298,10 +298,12 @@ const createUser = async (obj) => {
   });
 };
 
+//Finds a user by its name
 const findUser = async (name) => {
   return await User.findOne({ where: { name: name } });
 };
 
+//Checks if user exists in the database
 const checkUserExist = async (user) => {
   const savedUser = await User.findOne({ where: { name: user.name } });
   if (!savedUser) {
@@ -311,6 +313,7 @@ const checkUserExist = async (user) => {
   }
 };
 
+//Adds user with score to scoreboard
 const addScore = async (user) => {
   await Scoreboard.create({
     userId: user.id,
