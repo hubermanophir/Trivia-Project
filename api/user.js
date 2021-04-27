@@ -77,4 +77,14 @@ router.post("/score", async (req, res) => {
   }
 });
 
+router.post("/getuser", async (req, res) => {
+  const { body } = req;
+  try {
+    const user = await findUser(body.name);
+    return res.status(200).json({ name: user.name, id: user.id });
+  } catch (err) {
+    return res.status(500).json({ error: "User not found" });
+  }
+});
+
 module.exports = router;

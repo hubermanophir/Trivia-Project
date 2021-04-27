@@ -1,38 +1,28 @@
 import React, { useRef } from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import Register from "./Register";
+import Login from "./Login";
+import axios from "axios";
 
-export default function Home({ inputHandler, userName }) {
-  const inputRef = useRef();
+export default function Home({ setUserExists }) {
+  const logoutHandler = async () => {
+    try {
+      await axios.post("/api/user/logout");
+      setUserExists(false);
+    } catch (error) {
+      console.log("error logout");
+    }
+  };
   return (
     <div id="home-container">
       <h1 id="main-title">Trivia Game</h1>
       <div id="login-container">
-        <input
-          id="username-input"
-          ref={inputRef}
-          type="text"
-          placeholder="Enter user name"
-          onChange={(e) => inputHandler(e.target.value)}
-          required
-        />
-        {userName === "" ? (
-          <Link to="/">
-            <Button
-              className="start-game-button"
-              onClick={() => inputRef.current.focus()}
-              variant="contained"
-            >
-              Start Game
-            </Button>
-          </Link>
-        ) : (
-          <Link to="/game">
-            <Button className="start-game-button" variant="contained">
-              Start Game
-            </Button>
-          </Link>
-        )}
+        <Link to="/game">
+          <Button className="start-game-button" variant="contained">
+            Start Game
+          </Button>
+        </Link>
         <Link to="/scoreboard">
           <Button
             className="scoreboard-button"
@@ -42,6 +32,15 @@ export default function Home({ inputHandler, userName }) {
             Scoreboard
           </Button>
         </Link>
+
+        <Button
+          onClick={logoutHandler}
+          className="scoreboard-button"
+          variant="contained"
+          color="primary"
+        >
+          Logout
+        </Button>
       </div>
     </div>
   );

@@ -120,15 +120,20 @@ export default function Game({ userName }) {
   useEffect(() => {
     (async () => {
       if (lives === 0) {
-        const user = {
-          name: userName,
-          score: gameScore,
-        };
         try {
-          await axios.post("/api/trivia/user", user);
+          const savedUser = await axios.post("/api/user/getuser", {
+            name: userName,
+          });
+          console.log(savedUser.data);
+          const user = {
+            name: savedUser.data.name,
+            id: savedUser.data.id,
+            score: gameScore,
+          };
+          await axios.post("/api/user/score", user);
           await axios.post("/api/trivia/new", ratedNewQuestions);
         } catch (error) {
-          console.log("User failed");
+          console.log(error);
         }
       }
     })();
