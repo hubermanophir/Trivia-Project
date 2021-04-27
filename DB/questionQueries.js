@@ -292,7 +292,11 @@ const updateSavedQuestion = async (obj) => {
 
 //Creates a user with a user name and a score
 const createUser = async (obj) => {
-  const user = await User.create({ name: obj.name, score: obj.score });
+  const user = await User.create({
+    name: obj.name,
+    score: obj.score,
+    password: obj.password,
+  });
   await Scoreboard.create({
     userId: user.id,
     name: user.name,
