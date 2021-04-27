@@ -300,9 +300,7 @@ const createUser = async (obj) => {
 };
 
 const checkUserExist = async (user) => {
-  // console.log(user);
   const savedUser = await User.findOne({ where: { name: user.name } });
-  // console.log(savedUser);
   if (!savedUser) {
     return false;
   } else {
