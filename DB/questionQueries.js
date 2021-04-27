@@ -292,11 +292,14 @@ const updateSavedQuestion = async (obj) => {
 
 //Creates a user with a user name and a score
 const createUser = async (obj) => {
-  console.log(obj);
   await User.create({
     name: obj.name,
     password: obj.password,
   });
+};
+
+const findUser = async (name) => {
+  return await User.findOne({ where: { name: name } });
 };
 
 const checkUserExist = async (user) => {
@@ -334,4 +337,5 @@ module.exports = {
   allSavedQuestions,
   addScore,
   checkUserExist,
+  findUser,
 };
