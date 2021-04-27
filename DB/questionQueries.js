@@ -292,11 +292,25 @@ const updateSavedQuestion = async (obj) => {
 
 //Creates a user with a user name and a score
 const createUser = async (obj) => {
-  const user = await User.create({
+  console.log(obj);
+  await User.create({
     name: obj.name,
-    score: obj.score,
     password: obj.password,
   });
+};
+
+const checkUserExist = async (user) => {
+  // console.log(user);
+  const savedUser = await User.findOne({ where: { name: user.name } });
+  // console.log(savedUser);
+  if (!savedUser) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const addScore = async (user) => {
   await Scoreboard.create({
     userId: user.id,
     name: user.name,
@@ -320,4 +334,6 @@ module.exports = {
   createUser,
   getOrderedScoreboard,
   allSavedQuestions,
+  addScore,
+  checkUserExist,
 };
