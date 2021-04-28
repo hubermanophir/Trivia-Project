@@ -20,8 +20,6 @@ export default function Login({
     try {
       await axios.post("/api/user/login", user);
       setUserExists(true);
-      setUserName("");
-      setPassword("");
       console.log("success logging in");
     } catch (error) {
       console.log("error invalid user");
