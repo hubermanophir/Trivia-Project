@@ -9,6 +9,8 @@ export default function Login({
   userName,
   password,
   setUserExists,
+  setUserName,
+  setPassword,
 }) {
   const onClickHandler = async () => {
     const user = {
@@ -18,6 +20,8 @@ export default function Login({
     try {
       await axios.post("/api/user/login", user);
       setUserExists(true);
+      setUserName("");
+      setPassword("");
       console.log("success logging in");
     } catch (error) {
       console.log("error invalid user");
@@ -52,7 +56,7 @@ export default function Login({
         Login
       </Button>
       <div>
-          <span>Don't have a user yet? Register now </span>
+        <span>Don't have a user yet? Register now </span>
       </div>
       <Link to="/register">
         <Button

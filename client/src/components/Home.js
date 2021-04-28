@@ -5,10 +5,11 @@ import Register from "./Register";
 import Login from "./Login";
 import axios from "axios";
 
-export default function Home({ setUserExists }) {
+export default function Home({ setUserExists, setNewUser }) {
   const logoutHandler = async () => {
     try {
       await axios.post("/api/user/logout");
+      setNewUser(false);
       setUserExists(false);
     } catch (error) {
       console.log("error logout");

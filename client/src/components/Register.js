@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -9,7 +9,15 @@ export default function Register({
   userName,
   password,
   setNewUser,
+  setUserExists,
+  setUserName,
+  setPassword,
 }) {
+  useEffect(() => {
+    setUserName("");
+    setPassword("");
+  }, []);
+
   const registerClick = async () => {
     const user = {
       name: userName,
@@ -18,6 +26,7 @@ export default function Register({
     try {
       await axios.post("/api/user/register", user);
       setNewUser(true);
+      setUserExists(true);
     } catch (error) {
       console.log("Error signing up");
     }
