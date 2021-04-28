@@ -23,6 +23,11 @@ export default function Register({
       name: userName,
       password: password,
     };
+
+    if (userName === "" || password === "") {
+      console.log("Username and password required");
+      return;
+    }
     try {
       await axios.post("/api/user/register", user);
       setNewUser(true);

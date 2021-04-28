@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,11 +12,20 @@ export default function Login({
   setUserName,
   setPassword,
 }) {
+  useEffect(() => {
+    setUserName("");
+    setPassword("");
+  }, []);
+
   const onClickHandler = async () => {
     const user = {
       name: userName,
       password: password,
     };
+    if (userName === "" || password === "") {
+      console.log("Username and password required");
+      return;
+    }
     try {
       await axios.post("/api/user/login", user);
       setUserExists(true);

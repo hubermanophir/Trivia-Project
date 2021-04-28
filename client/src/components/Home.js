@@ -1,11 +1,18 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
 import axios from "axios";
 
-export default function Home({ setUserExists, setNewUser }) {
+export default function Home({
+  setUserExists,
+  setNewUser,
+  setUserName,
+  setPassword,
+}) {
+
+
   const logoutHandler = async () => {
     try {
       await axios.post("/api/user/logout");
