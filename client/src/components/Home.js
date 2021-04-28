@@ -5,14 +5,7 @@ import Register from "./Register";
 import Login from "./Login";
 import axios from "axios";
 
-export default function Home({
-  setUserExists,
-  setNewUser,
-  setUserName,
-  setPassword,
-}) {
-
-
+export default function Home({ setUserExists, setNewUser, userName }) {
   const logoutHandler = async () => {
     try {
       await axios.post("/api/user/logout");

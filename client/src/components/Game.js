@@ -133,7 +133,7 @@ export default function Game({ userName }) {
           await axios.post("/api/user/score", user);
           await axios.post("/api/trivia/new", ratedNewQuestions);
         } catch (error) {
-          console.log(error);
+          console.log(error.message);
         }
       }
     })();

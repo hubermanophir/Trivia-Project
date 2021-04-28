@@ -7,6 +7,78 @@ body {
   padding: 0 !important;
 }
 
+#login-title {
+  text-align: center;
+  font-size: 5em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3em;
+}
+
+#login-container-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.username-input-login {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 2em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+.password-input-login {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+#login-button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 2em;
+}
+
+#login-register-button {
+  margin-top: 1em;
+}
+
+#register-title {
+  text-align: center;
+  font-size: 5em;
+}
+
 #home-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,6 +95,53 @@ body {
           align-items: center;
   text-align: center;
   min-height: 70vh;
+}
+
+#register-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#username-input-register {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+#password-input-register {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
 }
 
 #main-title {

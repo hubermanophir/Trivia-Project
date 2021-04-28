@@ -84,6 +84,7 @@ router.post("/score", async (req, res) => {
 //Gets a single user
 router.post("/getuser", async (req, res) => {
   const { body } = req;
+  console.log(body);
   try {
     const user = await findUser(body.name);
     return res.status(200).json({ name: user.name, id: user.id });

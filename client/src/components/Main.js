@@ -62,6 +62,7 @@ export default function Main() {
                 setPassword={setPassword}
                 setNewUser={setNewUser}
                 setUserExists={setUserExists}
+                userName={userName}
               />
             ) : (
               <Redirect to="/" />
