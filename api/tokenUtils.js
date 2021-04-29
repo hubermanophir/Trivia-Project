@@ -8,9 +8,5 @@ const createAccessToken = (user) => {
   });
 };
 
-const createRefreshToken = (user) => {
-  user.password = undefined;
-  return jwt.sign({ user }, process.env.REFRESH_TOKEN_SECRET);
-};
 
 module.exports = { createAccessToken };
