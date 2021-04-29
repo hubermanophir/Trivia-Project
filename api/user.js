@@ -9,12 +9,13 @@ const {
   addScore,
   findUser,
 } = require("../DB/questionQueries");
+const { route } = require("./trivia");
 
 // create json web token
 const createAccessToken = (user) => {
   user.password = undefined;
   return jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1d",
+    expiresIn: "10m",
   });
 };
 
@@ -92,5 +93,7 @@ router.post("/getuser", async (req, res) => {
     return res.status(500).json({ error: "User not found" });
   }
 });
+
+router.post("/token", async (req, res) => {});
 
 module.exports = router;
