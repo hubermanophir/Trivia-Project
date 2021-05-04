@@ -1,0 +1,16 @@
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+env_variables:
+  SQL_PASSWORD: "Ophir212"
+  DB_NAME: "trivia"
+  ACCESS_TOKEN_SECRET: "$2b$10$8jz874m2K/bONb8/Avbr6eKvqKjn/o97gbOvrQjsXFalfMN7/Uwxe"
+  REFRESH_TOKEN_SECRET: "$2b$10$Ilh5YT9nE0eJN5XDMlHVKeyt3IX5pWjEc8tPnoisTCIh3glRbUWSu"
+  HOST: "34.89.237.182"
