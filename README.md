@@ -4,6 +4,13 @@ By <a href="https://github.com/eyalzimerman">Eyal Zimerman</a> and <a href="http
 
 ![overview image](./images/overview.png)
 
+
+.env in DB folder and outside folder
+ACCESS_TOKEN_SECRET='$2b$10$8jz874m2K/bONb8/Avbr6eKvqKjn/o97gbOvrQjsXFalfMN7/Uwxe'
+REFRESH_TOKEN_SECRET='$2b$10$Ilh5YT9nE0eJN5XDMlHVKeyt3IX5pWjEc8tPnoisTCIh3glRbUWSu'
+
+to run localy run migrate seed the db and start the server with npm start
+
 ## OVERVIEW
 
 Trivia game built with react, express server and MySQL database.
