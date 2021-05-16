@@ -6,6 +6,7 @@ By <a href="https://github.com/eyalzimerman">Eyal Zimerman</a> and <a href="http
 
 
 .env in DB folder and outside folder
+
 ACCESS_TOKEN_SECRET='$2b$10$8jz874m2K/bONb8/Avbr6eKvqKjn/o97gbOvrQjsXFalfMN7/Uwxe'
 REFRESH_TOKEN_SECRET='$2b$10$Ilh5YT9nE0eJN5XDMlHVKeyt3IX5pWjEc8tPnoisTCIh3glRbUWSu'
 
