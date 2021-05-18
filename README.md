@@ -5,6 +5,14 @@ By <a href="https://github.com/eyalzimerman">Eyal Zimerman</a> and <a href="http
 ![overview image](./images/overview.png)
 
 
+ run 
+  ```
+  npm install
+  ```
+  in the main folder and in the DB folder
+  
+  
+  
 .env in DB folder and outside folder
 
 ACCESS_TOKEN_SECRET='$2b$10$8jz874m2K/bONb8/Avbr6eKvqKjn/o97gbOvrQjsXFalfMN7/Uwxe'
