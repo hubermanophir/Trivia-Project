@@ -25,7 +25,11 @@ you will see the example.env file in the outer folder and the DB folder
  ```
  
 
-to run localy run migrate seed the db and start the server with npm start
+to run locally use the 
+ ```
+ npm start
+ ```
+ in the outer folder the server will run locally on http://localhost:8080
 
 ## OVERVIEW
 
